@@ -17,26 +17,27 @@ const Navbar = () => {
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <div className="nav-desktop">
-          <div className="nav-group">
-            <Link to="/" className="nav-link">Home</Link>
-            <Link to="/contact" className="nav-link">Contact</Link>
-          </div>
-
-          <Link to="/" className="brand-logo" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
+          <Link to="/" className="brand-logo" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', flex: '0 0 auto' }}>
             {siteConfig.brandName}
             <motion.img
               src="/images/paper_plane.png"
               alt="paper plane"
-              style={{ position: 'absolute', right: '-65px', top: '-45px', width: '75px', pointerEvents: 'none', zIndex: 100 }}
+              style={{ position: 'absolute', right: '-45px', top: '-25px', width: '45px', pointerEvents: 'none', zIndex: 100 }}
               initial={{ opacity: 0, x: -90, y: 50, rotate: -40 }}
-              animate={{ opacity: 1, x: [-90, -30, 0], y: [50, -20, 0], rotate: [-40, 5, 20] }}
+              animate={{ opacity: 1, x: [-70, -20, 0], y: [40, -15, 0], rotate: [-40, 5, 20] }}
               transition={{ duration: 1.2, ease: "easeOut", delay: 0.8 }}
             />
           </Link>
 
-          <div className="nav-group">
+          <div className="nav-group" style={{ flex: '1', justifyContent: 'center' }}>
+            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/about" className="nav-link">About</Link>
+            <Link to="/contact" className="nav-link">Contact</Link>
             <Link to="/tours" className="nav-link">Tours</Link>
             <Link to="/tours" className="nav-link">Upcoming</Link>
+          </div>
+          
+          <div className="nav-group" style={{ flex: '0 0 auto', justifyContent: 'flex-end' }}>
             <Link to="/contact" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '0.875rem' }}>Enquire Now</Link>
           </div>
         </div>
